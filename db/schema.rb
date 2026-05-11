@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_05_11_003505) do
+ActiveRecord::Schema[8.1].define(version: 2026_05_11_045434) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -20,6 +20,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_05_11_003505) do
     t.text "memo"
     t.string "name"
     t.bigint "prefecture_id", null: false
+    t.integer "status"
     t.datetime "updated_at", null: false
     t.index ["prefecture_id"], name: "index_places_on_prefecture_id"
   end

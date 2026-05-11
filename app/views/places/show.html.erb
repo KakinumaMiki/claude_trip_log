@@ -8,6 +8,15 @@
   <h1 class="text-3xl font-bold text-gray-800 mb-6"><%= @place.name %></h1>
 
   <div class="bg-white rounded-xl shadow-sm p-6 flex flex-col gap-4">
+    <div>
+      <p class="text-sm font-bold text-gray-500 mb-1">訪問状況</p>
+      <% if @place.visited? %>
+        <span class="text-sm bg-green-100 text-green-700 px-3 py-1 rounded-full">行ったことがある</span>
+      <% elsif @place.want_to_visit? %>
+        <span class="text-sm bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full">行ってみたい</span>
+      <% end %>
+    </div>
+
     <% if @place.address.present? %>
       <div>
         <p class="text-sm font-bold text-gray-500 mb-1">住所</p>
