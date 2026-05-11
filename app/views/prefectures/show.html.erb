@@ -1,0 +1,30 @@
+<% content_for :title, @prefecture.name %>
+
+<div class="max-w-2xl mx-auto px-6 py-8">
+  <div class="flex items-center gap-3 mb-6">
+    <%= link_to "← マップに戻る", root_path, class: "text-blue-600 hover:underline text-sm" %>
+  </div>
+
+  <div class="flex items-center justify-between mb-6">
+    <div>
+      <h1 class="text-3xl font-bold text-gray-800 mb-2"><%= @prefecture.name %></h1>
+      <p class="text-gray-500"><%= @prefecture.region %> / <%= @prefecture.name_en %></p>
+    </div>
+    <%= link_to "＋ 場所の追加", new_prefecture_place_path(@prefecture),
+          class: "bg-blue-600 hover:bg-blue-700 text-white font-bold px-4 py-2 rounded-lg text-sm" %>
+  </div>
+
+  <div class="bg-white rounded-xl shadow-sm p-6">
+    <% if @prefecture.places.any? %>
+      <ul class="divide-y divide-gray-100">
+        <% @prefecture.places.each do |place| %>
+          <li class="py-3">
+            <%= link_to place.name, prefecture_place_path(@prefecture, place), class: "text-blue-600 hover:underline font-medium" %>
+          </li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p class="text-gray-400">まだ場所が追加されていません。</p>
+    <% end %>
+  </div>
+</div>
