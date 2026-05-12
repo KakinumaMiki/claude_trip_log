@@ -25,6 +25,6 @@ class PlacesController < ApplicationController
   end
 
   def place_params
-    params.expect(place: [:name, :address, :memo, :status])
+    params.expect(place: [ :name, :address, :memo, :status ])
   end
 end
