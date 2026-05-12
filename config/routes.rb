@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
 
   root "prefectures#index"
-  resources :prefectures, only: [:index, :show] do
-    resources :places, only: [:new, :create, :show]
+  resources :prefectures, only: [ :index, :show ] do
+    resources :places, only: [ :new, :create, :show ]
   end
 end
