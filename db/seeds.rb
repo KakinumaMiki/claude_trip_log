@@ -45,7 +45,7 @@ prefectures = [
   { code: 44, name: "大分県",   name_en: "Oita",       region: "九州・沖縄" },
   { code: 45, name: "宮崎県",   name_en: "Miyazaki",   region: "九州・沖縄" },
   { code: 46, name: "鹿児島県", name_en: "Kagoshima",  region: "九州・沖縄" },
-  { code: 47, name: "沖縄県",   name_en: "Okinawa",    region: "九州・沖縄" },
+  { code: 47, name: "沖縄県",   name_en: "Okinawa",    region: "九州・沖縄" }
 ]
 
 Prefecture.insert_all!(prefectures)
